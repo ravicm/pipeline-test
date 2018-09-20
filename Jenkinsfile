@@ -11,5 +11,10 @@ pipeline {
         input 'Do you want to deploy?'
       }
     }
+    stage('Stage 3') {
+      steps {
+        echo 'Deploy'
+      }
+    }
   }
 }
