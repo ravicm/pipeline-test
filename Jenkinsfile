@@ -8,7 +8,6 @@ pipeline {
     }
     stage('Build') {
       steps {
-        input 'Do you want to deploy?'
         echo 'Building artifact'
       }
     }
@@ -19,7 +18,7 @@ pipeline {
     }
     stage('User Input') {
       steps {
-        input 'Do you want to deploy'
+        input 'Do you want to deploy?'
       }
     }
     stage('Deploy') {
