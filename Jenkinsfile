@@ -19,8 +19,8 @@ pipeline {
     stage('User Input') {
       steps {
         input 'Do you want to deploy?'
+        echo 'This is User input stage step2'
       }
-      
     }
     stage('Deploy') {
       steps {
