@@ -1,19 +1,30 @@
 pipeline {
   agent any
   stages {
-    stage('Stage 1') {
+    stage('SCM') {
       steps {
         echo 'This is stage 1'
       }
     }
-    stage('Stage 2') {
+    stage('Build') {
       steps {
         input 'Do you want to deploy?'
+        echo 'Building artifact'
       }
     }
-    stage('Stage 3') {
+    stage('Test') {
       steps {
-        echo 'Deploy'
+        echo 'Testing artifact'
+      }
+    }
+    stage('User Input') {
+      steps {
+        input 'Do you want to deploy'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'echo "Deploying to dev env"'
       }
     }
   }
